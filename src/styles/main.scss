@@ -1,95 +1,177 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+$warna-pertama: #c6302c;
+$warna-kedua: #92201d;
+$warna-abu: #f9f9f9;
+$warna-putih: #ffffff;
+
 * {
   font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
+  list-style: none;
   text-decoration: none;
   box-sizing: border-box;
 }
 
-$warna-utama: #c6302c;
-$warna-gray: #f9f9f9;
-$warna-putih: #ffffff;
-
 html {
-  min-width: 360px;
+  background-color: green;
 }
 
 .navbar {
+  // z-index: -1000;
   position: sticky;
-  padding: 8px 20px;
+  padding: 0 20px;
   display: flex;
-  background-color: $warna-utama;
-
-  ul {
+  justify-content: space-between;
+  align-content: center;
+  height: 64px;
+  background-color: $warna-pertama;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  .logo {
     display: flex;
-    list-style-type: none;
-    width: 100%;
-    background-color: $warna-utama;
+    align-items: center;
+    justify-content: space-between;
+    width: 155px;
+    font-weight: 500;
     color: $warna-putih;
+    font-size: 24px;
   }
 
-  &__logo {
-    margin-right: auto;
-    a {
+  .open {
+    transform: translate(0px, 0);
+    transition: transform 0.1s;
+  }
+  ul {
+    z-index: -1;
+    position: absolute;
+    top: 64px;
+    background-color: $warna-putih;
+    width: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translate(-3000px, 0);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    li {
+      height: 48px;
       display: flex;
       align-items: center;
-      min-height: 44px;
-      min-width: 44px;
-      font-size: 24px;
-      color: white;
-      font-weight: 600;
-    }
-    &__text {
-      margin-left: 5px;
-      padding: 5px 0;
-    }
-  }
-
-  &__toggle {
-    display: none;
-    cursor: pointer;
-  }
-
-  &__link {
-    margin-right: 24px;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      min-width: 44px;
-      font-size: 16px;
+      font-size: 16;
       font-weight: 500;
-      color: #ffffff;
+      width: 100%;
+      text-align: center;
+      border-bottom: 2px solid $warna-abu;
+      a {
+        color: $warna-kedua;
+        padding: 13px;
+        width: 100%;
+        &:hover {
+          background-color: $warna-kedua;
+          color: $warna-putih;
+        }
+      }
+    }
+  }
+  .toggle {
+    padding: 12px;
+    margin: 8.5px 0;
+    color: $warna-putih;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: $warna-kedua;
     }
   }
 }
 
-@media (max-width: 600px) {
+/*
+ * Jumbotron
+ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  // background-image: url("/images/heros/hero-image_2.jpg");
+
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 15.1%, rgba(0, 0, 0, 0.81) 100%
+    ),
+    url("/images/heros/hero-image_2.jpg");
+  background-position: center;
+  // background-color: green;
+}
+
+.hero__inner {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.hero__title {
+  color: $warna-putih;
+  font-weight: 800;
+  font-size: 72px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 300;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* responsive breakpoint */
+
+// @media screen and (min-width: 361px) {
+
+@media screen and (min-width: 768px) {
   .navbar {
+    padding: 0 70px;
+    justify-content: space-between;
+    align-content: space-between;
+
     ul {
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    &__toggle {
-      display: flex;
-      display: flex;
-      align-items: center;
-    }
-  }
+      transform: translate(0px, 0);
+      width: 39%;
+      top: 0;
+      position: relative;
+      flex-direction: row;
+      justify-content: flex-end;
+      background-color: $warna-pertama;
+      box-shadow: none;
 
-  .navbar__link {
-    display: none;
-    width: 100%;
-    a {
-      width: 100%;
-      text-align: center;
-    }
-  }
+      li {
+        margin-left: auto;
+        width: 100%;
+        border-bottom: 0px solid $warna-abu;
 
-  .active {
-    display: block;
+        a {
+          padding: 10.5px 0;
+          color: $warna-putih;
+          width: 100%;
+
+          &:hover {
+            // border-radius: 6px;
+            border-radius: 6px;
+            background-color: $warna-kedua;
+          }
+        }
+      }
+    }
+
+    .toggle {
+      display: none;
+    }
   }
 }
