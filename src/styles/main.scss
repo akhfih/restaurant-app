@@ -22,25 +22,28 @@ html {
   height: 100%;
 }
 
-// body{
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-// body{
-//   margin: auto;
-// }
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 9999;
+
+  &:focus {
+    top: 0;
+  }
+}
 
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
   align-items: center;
 }
 
 .navbar {
-  z-index: 9999;
+  z-index: 9998;
   position: fixed;
   top: 0;
   left: 0;
@@ -89,6 +92,7 @@ main {
       text-align: center;
       border-bottom: 2px solid $warna-abu;
       a {
+        margin: 5px;
         color: $warna-kedua;
         padding: 13px;
         width: 100%;
@@ -139,7 +143,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 
   &__inner {
     margin: 0 auto;
@@ -162,17 +166,19 @@ main {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  &__button {
+  a {
+    display: inline-block;
     transition: all 0.3s linear;
     font-size: 16px;
     font-weight: 400;
     color: $warna-putih;
     border-radius: 6px;
-    margin-top: 40px;
+    margin-top: 36px;
     background-color: $warna-pertama;
     cursor: pointer;
-    padding: 10.5px 15px;
-    border: none;
+    padding: 12px;
+    width: 100px;
+  
     filter: drop-shadow(0px 5px 9px rgba(0, 0, 0, 0.5));
 
     &:hover {
@@ -226,10 +232,6 @@ main {
     transition: all 0.3s linear;
     position: relative;
     background-color: $warna-abu;
-    // border: 1px solid black;
-    // height: 80px;
-    // width: 65px;
-    // background-color: $warna-pertama;
     &__img {
       width: 100%;
     }
@@ -255,7 +257,6 @@ main {
     }
 
     &:hover {
-      // background-color: $warna-pertama;
       background-color: $warna-kedua;
       color: $warna-putih;
       box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
@@ -330,7 +331,6 @@ main {
     &:hover {
       transform: scale(1.05);
       transition: transform 0.8s;
-      // border: 1px solid $warna-kedua;
       box-shadow: 0px 3px 18px rgba(0, 0, 0, 0.233);
     }
   }
@@ -341,13 +341,12 @@ footer {
   margin-top: 64px;
   padding: 1em;
   width: 100%;
+  bottom: 0;
   color: $warna-putih;
   text-align: center;
 }
 
 /* responsive breakpoint */
-
-// @media screen and (min-width: 361px) {
 
 @media screen and (min-width: 768px) {
   main {
@@ -404,7 +403,6 @@ footer {
 @media screen and (min-width: 1024px) {
   main {
     section {
-      
       max-width: 1200px;
     }
   }

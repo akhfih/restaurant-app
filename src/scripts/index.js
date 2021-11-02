@@ -13,7 +13,6 @@ toggle.addEventListener("click", function (event) {
 
 console.log(listRestaurant);
 data.restaurants.forEach((element) => {
-  console.log(element.city);
   const listItemRestaurant = ` <div class="items">
                           <img
                             class="items__img"
@@ -30,6 +29,5 @@ data.restaurants.forEach((element) => {
                           </div>
                         </div>
 `;
-
   listRestaurant.innerHTML += listItemRestaurant;
 });
