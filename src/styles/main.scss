@@ -14,20 +14,44 @@ $warna-putih: #ffffff;
   box-sizing: border-box;
 }
 
-// html {
-//   background-color: green;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// body{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+// body{
+//   margin: auto;
 // }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
 .navbar {
-  // z-index: -1000;
-  position: sticky;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-content: center;
   height: 64px;
   background-color: $warna-pertama;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   .logo {
     display: flex;
     align-items: center;
@@ -54,7 +78,7 @@ $warna-putih: #ffffff;
     align-items: center;
     justify-content: space-evenly;
     transform: translate(-3000px, 0);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     li {
       height: 48px;
       display: flex;
@@ -100,6 +124,7 @@ $warna-putih: #ffffff;
  */
 
 .hero {
+  margin-top: 63px;
   display: flex;
   align-items: center;
   min-height: 380px;
@@ -112,6 +137,9 @@ $warna-putih: #ffffff;
     ),
     url("/images/heros/hero-image_2.jpg");
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
   &__inner {
     margin: 0 auto;
@@ -121,7 +149,7 @@ $warna-putih: #ffffff;
   &__title {
     color: $warna-putih;
     font-weight: 800;
-    font-size: 72px;
+    font-size: 64px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
@@ -146,7 +174,6 @@ $warna-putih: #ffffff;
     padding: 10.5px 15px;
     border: none;
     filter: drop-shadow(0px 5px 9px rgba(0, 0, 0, 0.5));
-
 
     &:hover {
       background-color: $warna-kedua;
@@ -184,19 +211,21 @@ $warna-putih: #ffffff;
   }
 }
 
-.category {
+.menu__list {
   margin: 24px 20px;
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  .post {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
     padding: 5px;
     border-radius: 6px;
     transition: all 0.3s linear;
-
-    // background-color: $warna-abu;
+    position: relative;
+    background-color: $warna-abu;
     // border: 1px solid black;
     // height: 80px;
     // width: 65px;
@@ -204,11 +233,25 @@ $warna-putih: #ffffff;
     &__img {
       width: 100%;
     }
-    &__text {
-      font-size: medium;
-      font-weight: 500;
-
+    &__link {
       text-align: center;
+      font-size: medium;
+      font-weight: 600;
+      color: $warna-kedua;
+      text-align: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      &:hover {
+        color: $warna-putih;
+      }
     }
 
     &:hover {
@@ -216,8 +259,90 @@ $warna-putih: #ffffff;
       background-color: $warna-kedua;
       color: $warna-putih;
       box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+      transition: transform 0.8s;
     }
   }
+}
+
+.restaurant {
+  margin: 24px 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 25px;
+  .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+    position: relative;
+
+    &__img {
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 15.1%,
+        rgba(0, 0, 0, 0.81) 100%
+      );
+      border-radius: 10px 10px 0px 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__sub {
+      margin: 15px;
+
+      .city {
+        position: absolute;
+        margin-top: -80px;
+        color: $warna-abu;
+        font-size: large;
+        font-weight: 700;
+      }
+      &__title {
+        a {
+          color: $warna-kedua;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+      &__bintang {
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        margin-top: 10px;
+        line-height: 1.5em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.8s;
+      // border: 1px solid $warna-kedua;
+      box-shadow: 0px 3px 18px rgba(0, 0, 0, 0.233);
+    }
+  }
+}
+
+footer {
+  background-color: $warna-pertama;
+  margin-top: 64px;
+  padding: 1em;
+  width: 100%;
+  color: $warna-putih;
+  text-align: center;
 }
 
 /* responsive breakpoint */
@@ -225,6 +350,9 @@ $warna-putih: #ffffff;
 // @media screen and (min-width: 361px) {
 
 @media screen and (min-width: 768px) {
+  main {
+    margin: 0 70px;
+  }
   .navbar {
     padding: 0 70px;
     justify-content: space-between;
@@ -264,13 +392,28 @@ $warna-putih: #ffffff;
       display: none;
     }
   }
-  .category {
+  .menu__list {
     grid-template-columns: repeat(6, 1fr);
+  }
+
+  .restaurant {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .category {
-    grid-template-columns: repeat(12, 1fr);
+  main {
+    section {
+      
+      max-width: 1200px;
+    }
+  }
+
+  .menu__list {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  .restaurant {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
