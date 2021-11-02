@@ -139,7 +139,7 @@ main {
       rgba(0, 0, 0, 0) 15.1%,
       rgba(0, 0, 0, 0.81) 100%
     ),
-    url("/images/heros/hero-image_2.jpg");
+    url("./images/heros/hero-image_2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -178,7 +178,7 @@ main {
     cursor: pointer;
     padding: 12px;
     width: 100px;
-  
+
     filter: drop-shadow(0px 5px 9px rgba(0, 0, 0, 0.5));
 
     &:hover {
