@@ -106,13 +106,17 @@ main {
     }
   }
   .toggle {
+    box-sizing: content-box;
+    min-height: 44px;
+    min-width: 44px;
     transition: all 0.3s linear;
-    padding: 10.5px;
-    margin: 8.5px 0;
+    padding: auto;
+    margin: 9px 0;
     color: $warna-putih;
     font-size: 24px;
     display: flex;
     align-items: center;
+    justify-content: center;
     border: none;
     background-color: $warna-pertama;
     &:hover {
@@ -143,7 +147,6 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-attachment: fixed;
 
   &__inner {
     margin: 0 auto;
@@ -153,16 +156,17 @@ main {
   &__title {
     color: $warna-putih;
     font-weight: 800;
-    font-size: 64px;
+    font-size: 36px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   &__tagline {
-    margin: 0 70px;
+    margin: 0 20px;
     color: #fff;
     margin-top: 16px;
     font-size: 18px;
     font-weight: 300;
+    text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
@@ -178,7 +182,6 @@ main {
     cursor: pointer;
     padding: 12px;
     width: 100px;
-
     filter: drop-shadow(0px 5px 9px rgba(0, 0, 0, 0.5));
 
     &:hover {
@@ -188,7 +191,7 @@ main {
 }
 
 .header {
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 32px;
   display: flex;
   flex-direction: column;
@@ -207,7 +210,7 @@ main {
       border-radius: 3px;
       margin: 0 5px;
       height: 3px;
-      width: 150px;
+      width: 120px;
       background-color: $warna-pertama;
     }
   }
@@ -220,7 +223,7 @@ main {
 .menu__list {
   margin: 24px 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   &__item {
     display: flex;
@@ -236,7 +239,6 @@ main {
       width: 100%;
     }
     &__link {
-      text-align: center;
       font-size: medium;
       font-weight: 600;
       color: $warna-kedua;
@@ -348,7 +350,23 @@ footer {
 
 /* responsive breakpoint */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 481px) {
+ 
+  main {
+    margin: 0 20px;
+  }
+
+  .menu__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .restaurant {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 769px) {
+
   main {
     margin: 0 70px;
   }
@@ -359,7 +377,6 @@ footer {
 
     ul {
       transform: translate(0px, 0);
-      // width: 39%;
       width: 300px;
       top: 0;
       position: relative;
@@ -379,7 +396,6 @@ footer {
           width: 100%;
 
           &:hover {
-            // border-radius: 6px;
             border-radius: 6px;
             background-color: $warna-kedua;
           }
@@ -391,12 +407,13 @@ footer {
       display: none;
     }
   }
+
   .menu__list {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .restaurant {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -405,6 +422,11 @@ footer {
     section {
       max-width: 1200px;
     }
+  }
+
+  .navbar {
+  
+    padding: 0 70px;
   }
 
   .menu__list {
