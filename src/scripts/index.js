@@ -1,18 +1,31 @@
-import "regenerator-runtime"; /* for async await transpile */
-import "../styles/main.scss";
-import data from "../DATA.json";
+/* eslint-disable max-len */
+import 'regenerator-runtime'; /* for async await transpile */
+import './views/component/app-navbar';
+import './views/component/app-hero';
+import './views/component/app-category';
+import './views/component/item-restaurant';
+import './views/component/app-explore';
 
-const toggle = document.querySelector(".toggle");
-const nav = document.querySelector("nav ul");
-const listRestaurant = document.querySelector(".restaurant");
+import '../styles/main.scss';
+import App from './views/app';
+// import data from '../DATA.json';
 
-toggle.addEventListener("click", function (event) {
-  nav.classList.toggle("open");
-  event.stopPropagation();
+const app = new App({
+  button: document.querySelector('.toggle'),
+  drawer: document.querySelector('.navbar ul'),
+  content: document.querySelector('#maincontent'),
+  header: document.querySelector('header'),
 });
 
-console.log(listRestaurant);
-data.restaurants.forEach((element) => {
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
+});
+
+/* data.restaurants.forEach((element) => {
   const listItemRestaurant = ` <div class="items">
                           <img
                             class="items__img"
@@ -31,3 +44,4 @@ data.restaurants.forEach((element) => {
 `;
   listRestaurant.innerHTML += listItemRestaurant;
 });
+ */

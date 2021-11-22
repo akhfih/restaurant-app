@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Temukan tempat kunyah-kunyah enak bersama orang tercinta,
+    keluarga, dan teman-teman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./logo/favicon.png" />
     <title>maaeem</title>
@@ -11,182 +13,16 @@
     <a href="#maincontent" class="skip-link">Menuju ke konten</a>
     <!-- bagian header -->
     <header>
-      <nav class="navbar">
-        <div class="logo"><img src="./logo/logo.svg" alt="logo" />maaeem</div>
-        <button class="toggle">☰</button>
-        <ul>
-          <li><a href="/">Home </a></li>
-          <li><a href="#">Favorite</a></li>
-          <li><a href="https://www.instagram.com/akhfih">About Us</a></li>
-        </ul>
-      </nav>
-      <div class="hero">
-        <div class="hero__inner">
-          <h1 class="hero__title">maaeem</h1>
-          <p class="hero__tagline">
-            Temukan tanpa ragu tempat kunyah-kunyah enak bersama orang tercinta,
-            keluarga, dan teman-teman.
-          </p>
-          <a href="#explorer" class="hero__button">Explore</a>
-        </div>
-      </div>
+      <app-navbar></app-navbar>  
+       
     </header>
+  
+    <!--  main content -->
     <main id="maincontent">
       <!-- bagian category menu -->
-      <section class="menu">
-        <header class="header">
-          <h1 tabindex="0" class="header__judul">Menu</h1>
-          <div class="header__garis">
-            <span></span>
-            <img src="./logo/logo-red-small.svg" alt="logo" />
-            <span></span>
-          </div>
-          <p class="header__subjudul">Berbagai menu kunyah-kunyah</p>
-        </header>
-        <div class="menu__list">
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/burger.png"
-              alt="burger"
-            />
-            <a class="menu__list__item__link" href="#">Burger</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/sandwich.png"
-              alt="sandwich"
-            />
-            <a class="menu__list__item__link" href="#">Sandwich</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/nasi.png"
-              alt="nasi"
-            />
-            <a class="menu__list__item__link" href="#">Nasi</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/mie.png"
-              alt="mie"
-            />
-            <a class="menu__list__item__link" href="#">Mie</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/sea-food.png"
-              alt="seafood"
-            />
-            <a class="menu__list__item__link" href="#">Sea Food</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/pizza.png"
-              alt="pizza"
-            />
-            <a class="menu__list__item__link" href="#">Pizza</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/potato.png"
-              alt="potato"
-            />
-            <a class="menu__list__item__link" href="#">Potato</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/meat.png"
-              alt="meat"
-            />
-            <a class="menu__list__item__link" href="#">Meat</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/tea.png"
-              alt="tea"
-            />
-            <a class="menu__list__item__link" href="#">Tea</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/coffee.png"
-              alt="coffee"
-            />
-            <a class="menu__list__item__link" href="#">Coffee</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/juice.png"
-              alt="juice"
-            />
-            <a class="menu__list__item__link" href="#">Juice</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/orange.png"
-              alt="orange"
-            />
-            <a class="menu__list__item__link" href="#">Orange</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/ice.png"
-              alt="ice"
-            />
-            <a class="menu__list__item__link" href="#">Ice</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/milk.png"
-              alt="milk"
-            />
-            <a class="menu__list__item__link" href="#">Milk</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/akua.png"
-              alt="akua"
-            />
-            <a class="menu__list__item__link" href="#">Akua</a>
-          </div>
-          <div class="menu__list__item">
-            <img
-              class="menu__list__item__img"
-              src="images/menu/soda.png"
-              alt="soda"
-            />
-            <a class="menu__list__item__link" href="#">Soda</a>
-          </div>
-        </div>
-      </section>
+     
       <!-- bagian explorer restaurant-->
-      <section class="explorer" id="explorer">
-        <header class="header">
-          <h2 tabindex="0" class="header__judul">Explore Restaurant</h2>
-          <div class="header__garis">
-            <span></span>
-            <img src="./logo/logo-red-small.svg" alt="logo" />
-            <span></span>
-          </div>
-          <p class="header__subjudul">Tentukan pilihanmu jangan ragu</p>
-        </header>
-        <div class="restaurant"></div>
-      </section>
+      
     </main>
     <footer><p>Copyright © 2021 - maaeem</p></footer>
   </body>

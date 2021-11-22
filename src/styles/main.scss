@@ -15,11 +15,13 @@ $warna-putih: #ffffff;
 }
 
 body,
-html {
+html{
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  scroll-padding-top: 90px;
+  scroll-behavior: smooth;
 }
 
 .skip-link {
@@ -54,7 +56,7 @@ main {
   align-content: center;
   height: 64px;
   background-color: $warna-pertama;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   .logo {
     display: flex;
     align-items: center;
@@ -66,8 +68,9 @@ main {
   }
 
   .open {
-    transform: translate(0px, 0);
+    transform: translate(0, 0);
     transition: transform 0.3s;
+    visibility: visible;
   }
   ul {
     z-index: -9;
@@ -81,7 +84,8 @@ main {
     align-items: center;
     justify-content: space-evenly;
     transform: translate(-3000px, 0);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    visibility: hidden;
     li {
       height: 64px;
       display: flex;
@@ -132,11 +136,12 @@ main {
  */
 
 .hero {
+  
   margin-top: 63px;
   display: flex;
   align-items: center;
   min-height: 380px;
-  width: 100%;
+   width: 100vw ;
   text-align: center;
   background-image: linear-gradient(
       to bottom,
@@ -157,7 +162,7 @@ main {
     color: $warna-putih;
     font-weight: 800;
     font-size: 36px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   &__tagline {
@@ -167,7 +172,7 @@ main {
     font-size: 18px;
     font-weight: 300;
     text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   a {
@@ -182,41 +187,11 @@ main {
     cursor: pointer;
     padding: 12px;
     width: 100px;
-    filter: drop-shadow(0px 5px 9px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.5));
 
     &:hover {
       background-color: $warna-kedua;
     }
-  }
-}
-
-.header {
-  font-size: 16px;
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  &__judul {
-    color: $warna-pertama;
-    line-height: 100%;
-  }
-  &__garis {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    span {
-      border-radius: 3px;
-      margin: 0 5px;
-      height: 3px;
-      width: 120px;
-      background-color: $warna-pertama;
-    }
-  }
-
-  &__subjudul {
-    font-size: 16px;
   }
 }
 
@@ -266,7 +241,7 @@ main {
     &:hover {
       background-color: $warna-kedua;
       color: $warna-putih;
-      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
       transform: scale(1.1);
       transition: transform 0.8s;
     }
@@ -282,7 +257,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.11);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.11);
     border-radius: 10px;
     position: relative;
 
@@ -292,9 +267,10 @@ main {
         rgba(0, 0, 0, 0) 15.1%,
         rgba(0, 0, 0, 0.81) 100%
       );
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 10px 10px 0 0;
       width: 100%;
-      height: 100%;
+      height: 220px;
+
     }
 
     &__sub {
@@ -302,10 +278,12 @@ main {
 
       .city {
         position: absolute;
+        padding: 0 3px;
         margin-top: -100px;
         color: $warna-abu;
         font-size: large;
         font-weight: 700;
+        text-shadow:  0px 0px 5px rgb(0, 0, 0);
       }
       &__title {
         a {
@@ -343,7 +321,7 @@ main {
     &:hover {
       transform: scale(1.05);
       transition: transform 0.8s;
-      box-shadow: 0px 3px 18px rgba(0, 0, 0, 0.233);
+      box-shadow: 0 3px 18px rgba(0, 0, 0, 0.233);
     }
   }
 }
@@ -384,7 +362,7 @@ footer {
     align-content: space-between;
 
     ul {
-      transform: translate(0px, 0);
+      transform: translate(0, 0);
       width: 300px;
       top: 0;
       position: relative;
@@ -392,11 +370,12 @@ footer {
       justify-content: flex-end;
       background-color: $warna-pertama;
       box-shadow: none;
+      visibility: visible;
 
       li {
         margin-left: auto;
         width: 100%;
-        border-bottom: 0px solid $warna-abu;
+        border-bottom: 0 solid $warna-abu;
 
         a {
           padding: 10.5px 0;
