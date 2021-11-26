@@ -16,6 +16,8 @@ $warna-putih: #ffffff;
 
 body,
 html{
+  // max-width: 100%;
+  
   margin: 0;
   padding: 0;
   width: 100%;
@@ -42,6 +44,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 64px 20px 0 20px;
+  min-height: 500px;
+  section {
+    margin-top: 32px;
+  }
 }
 
 .navbar {
@@ -134,14 +141,14 @@ main {
 /*
  * Jumbotron
  */
-
+app-hero {
+  width: 100vw;
+}
 .hero {
-  
-  margin-top: 63px;
   display: flex;
   align-items: center;
   min-height: 380px;
-   width: 100vw ;
+  width: 100%;
   text-align: center;
   background-image: linear-gradient(
       to bottom,
@@ -248,7 +255,7 @@ main {
   }
 }
 
-.restaurant {
+.restaurants {
   margin: 24px 20px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -326,12 +333,99 @@ main {
   }
 }
 
+
+app-detail, app-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px;
+  margin-top: 0;
+}
+.detail {
+  width: 100%;
+  .restaurant-detail {
+    margin-top: 32px;       
+    display: grid;
+    img {
+      border-radius: 20px;
+      width: 100%;
+    }
+    .description {
+      border-radius: 20px;
+      padding: 20px;
+      background-color: $warna-abu;
+      margin-top: 24px;
+      .sub-title {
+       
+        color: $warna-kedua;
+      }
+      p {
+        padding-bottom: 16px;
+        display: flex;
+        
+        img {
+          width: 24px;
+        }
+      }
+    }
+  }
+  
+}
+.reviews {
+  width: 100%;
+  .form-review, .item-review {
+    margin-top: 24px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: $warna-abu;
+    .sub-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: $warna-kedua;
+    }
+    input, textarea {
+      padding: 10px;
+      min-height: 44px;
+      box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+      border-style: none;
+      min-width: 100%;
+      max-width: 100%;
+      margin-bottom: 16px;
+    }
+
+    button {
+      display: inline-block;
+      transition: all 0.3s linear;
+      font-size: 16px;
+      font-weight: 400;
+      color: $warna-putih;
+      border-radius: 6px;
+      border-style: none;
+      background-color: $warna-pertama;
+      cursor: pointer;
+      padding: 12px;
+      width: 100px;
+      filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.288));
+
+    &:hover {
+      background-color: $warna-kedua;
+    }
+    }
+    
+  }
+}
+
+
+
+
 footer {
+  width: 100%;
   background-color: $warna-pertama;
   margin-top: 64px;
   padding: 1em;
-  width: 100%;
-  bottom: 0;
+  
   color: $warna-putih;
   text-align: center;
 }
@@ -341,13 +435,17 @@ footer {
 @media screen and (min-width: 481px) {
   main {
     margin: 0 20px;
+    margin-top: 64px;
+    section {
+      margin-top: 32px;
+    }
   }
 
   .menu__list {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .restaurant {
+  .restaurants {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -355,6 +453,10 @@ footer {
 @media screen and (min-width: 769px) {
   main {
     margin: 0 70px;
+    margin-top: 64px;
+    section {
+      margin-top: 32px;
+    }
   }
   .navbar {
     padding: 0 70px;
@@ -399,7 +501,7 @@ footer {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .restaurant {
+  .restaurants {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -408,6 +510,7 @@ footer {
   main {
     section {
       max-width: 1200px;
+      margin-top: 32px;
     }
   }
 
@@ -419,7 +522,7 @@ footer {
     grid-template-columns: repeat(8, 1fr);
   }
 
-  .restaurant {
+  .restaurants {
     grid-template-columns: repeat(3, 1fr);
   }
 }

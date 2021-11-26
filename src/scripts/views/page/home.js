@@ -13,7 +13,7 @@ const Home = {
 
   async afterRender() {
     const restaurants = await RestaurantSource.listRestaurants();
-    const restaurantsContainer = document.querySelector('.restaurant');
+    const restaurantsContainer = document.querySelector('.restaurants');
 
     restaurants.forEach((restaurant) => {
       const ItemRestaurant = document.createElement('item-restaurant');

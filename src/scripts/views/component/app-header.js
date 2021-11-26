@@ -36,7 +36,7 @@ class AppHeader extends HTMLElement {
     return `
       <style>
         .header {
-          margin-top: 32px;
+      
           display: flex;
           flex-direction: column;
           align-items: center;

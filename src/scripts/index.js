@@ -5,6 +5,8 @@ import './views/component/app-hero';
 import './views/component/app-category';
 import './views/component/item-restaurant';
 import './views/component/app-explore';
+import './views/component/app-detail';
+import './views/component/app-reviews';
 
 import '../styles/main.scss';
 import App from './views/app';

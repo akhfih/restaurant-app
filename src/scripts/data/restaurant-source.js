@@ -11,6 +11,22 @@ export default class RestaurantSource {
 
   static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
+    console.log(response);
     return response.json();
+  }
+
+  static async reviewRestaurant(review) {
+    try {
+      const Options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(review),
+      };
+      const response = await fetch('https://restaurant-api.dicoding.dev/review', Options);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return error;
+    }
   }
 }
