@@ -3,15 +3,12 @@ import API_ENDPOINT from '../globals/api-endpoint';
 export default class RestaurantSource {
   static async listRestaurants() {
     const response = await fetch(API_ENDPOINT.LIST);
-    // console.log(response);
     const responseJson = await response.json();
-    // console.log(responseJson.restaurants);
     return responseJson.restaurants;
   }
 
   static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
-    console.log(response);
     return response.json();
   }
 
@@ -22,7 +19,7 @@ export default class RestaurantSource {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(review),
       };
-      const response = await fetch('https://restaurant-api.dicoding.dev/review', Options);
+      const response = await fetch(API_ENDPOINT.REVIEW, Options);
       const data = await response.json();
       return data;
     } catch (error) {

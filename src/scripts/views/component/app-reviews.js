@@ -36,7 +36,7 @@ class AppReviews extends HTMLElement {
     this._inputNama = document.querySelector('#inputNama');
     this._inputReview = document.querySelector('#inputReview');
 
-    buttonSend.addEventListener('click', async (e) => {
+    buttonSend.addEventListener('click', async () => {
       const data = {
         id: this._id,
         name: this._inputNama.value,

@@ -10,6 +10,7 @@ import './views/component/app-reviews';
 
 import '../styles/main.scss';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 // import data from '../DATA.json';
 
 const app = new App({
@@ -25,25 +26,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
-
-/* data.restaurants.forEach((element) => {
-  const listItemRestaurant = ` <div class="items">
-                          <img
-                            class="items__img"
-                            src="${element.pictureId}"
-                            alt="${element.name}"
-                          />
-                          <div class="items__sub">
-                            <h3 class="items__sub__title"><a href="#">${element.name}</a></h3>
-                            <p class="city">${element.city}</p>
-                            <span class="items__sub__bintang"><img src="./logo/bintang.svg" alt="bintang">(${element.rating})</span>
-                            <p class="items__sub__text">
-                            ${element.description} ....
-                            </p>
-                          </div>
-                        </div>
-`;
-  listRestaurant.innerHTML += listItemRestaurant;
-});
- */
