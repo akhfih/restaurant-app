@@ -13,17 +13,12 @@ const Home = {
 
   async afterRender() {
     const restaurants = await RestaurantSource.listRestaurants();
-    const restaurantsContainer = document.querySelector('.restaurants');
-
-    restaurants.forEach((restaurant) => {
-      const ItemRestaurant = document.createElement('item-restaurant');
-      ItemRestaurant.restaurant = restaurant;
-      restaurantsContainer.appendChild(ItemRestaurant);
-    });
-    // console.log(restaurants);
-    // console.log('tes');
-    // console.log(restaurants);
-    // return ``;
+    const appExplore = document.querySelector('app-explore');
+    appExplore.header = {
+      title: "Explorer",
+      subTitle: "Tentukan Pilihanmu Jangan Ragu",
+    };
+    appExplore.restaurants = restaurants;
   },
 
 };

@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-underscore-dangle */
 import './app-header';
 import CONFIG from '../../globals/config';
@@ -15,9 +16,9 @@ class AppDetail extends HTMLElement {
     this.render();
   }
 
-  //   connectedCallback() {
-  //     this.render();
-  //   }
+  connectedCallback() {
+    window.scrollTo(0, 0);
+  }
 
   render() {
     this.innerHTML = this.getTemplate();

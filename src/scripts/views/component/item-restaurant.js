@@ -4,7 +4,6 @@ import CONFIG from '../../globals/config';
 class ItemRestaurant extends HTMLElement {
   set restaurant(restaurant) {
     this._restaurant = restaurant;
-    // this.render();
   }
 
   connectedCallback() {
