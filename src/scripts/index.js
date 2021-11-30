@@ -8,6 +8,8 @@ import './views/component/app-explore';
 import './views/component/app-detail';
 import './views/component/app-reviews';
 import './views/component/button-like';
+import './views/component/app-loading';
+import './views/component/app-failed';
 
 import '../styles/main.scss';
 import App from './views/app';

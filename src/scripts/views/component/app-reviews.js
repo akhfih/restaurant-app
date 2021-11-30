@@ -43,9 +43,13 @@ class AppReviews extends HTMLElement {
         review: this._inputReview.value,
       };
       const review = await RestaurantSource.reviewRestaurant(data);
-      this._reviews = review.customerReviews.reverse();
-      this.render();
-      console.log(review);
+      if (review === 'gagal') {
+        alert('gagal memberikan review...');
+      } else {
+        this._reviews = review.customerReviews.reverse();
+        this.render();
+        console.log(review);
+      }
     });
   }
 

@@ -31,7 +31,7 @@ class AppCategory extends HTMLElement {
               src="images/menu/burger.png"
               alt="burger"
             />
-            <a class="menu__list__item__link" href="#">Burger</a>
+            <a class="menu__list__item__link" href="#/search/air">Burger</a>
           </div>
           <div class="menu__list__item">
             <img

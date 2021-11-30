@@ -10,7 +10,6 @@ class AppExplore extends HTMLElement {
 
   set header(header) {
     this._header = header;
-    console.log(this._header.title);
     this.render();
   }
 

@@ -21,15 +21,7 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-
-    // if (url === '/favorite') {
-    //   document.querySelector('app-hero').remove();
-    // } else {
-    //   this._header.appendChild(document.createElement('app-hero'));
-    // }
-
     this._content.innerHTML = await page.render();
-
     await page.afterRender();
   }
 }

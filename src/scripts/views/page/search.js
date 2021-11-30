@@ -1,15 +1,13 @@
 /* eslint-disable quotes */
 import RestaurantSource from "../../data/restaurant-source";
+import UrlParser from "../../utils/url-parser";
 // import '../component/item-restaurant';
 
-const Home = {
+const Search = {
   async render() {
     return `       
-        <app-hero></app-hero>
-        <app-category/></app-category>
         <div class="loadingContainer">
         <app-explore></app-explore></div>
-        
     `;
   },
 
@@ -17,23 +15,17 @@ const Home = {
     const loading = document.createElement("app-loading");
     const loadingContaiter = document.querySelector(".loadingContainer");
     const appExplore = document.querySelector('app-explore');
-    appExplore.header = {
-      title: "Explorer",
-      subTitle: "Tentukan Pilihanmu Jangan Ragu",
-    };
     loadingContaiter.appendChild(loading);
-
-    const restaurants = await RestaurantSource.listRestaurants();
-    console.log(restaurants);
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurants = await RestaurantSource.searchRestaurant(url.id);
+    appExplore.header = {
+      title: "Search Restaurants",
+      subTitle: `Restaurant menyediakan ${url.id}`,
+    };
+    appExplore.restaurants = restaurants.restaurants;
     loading.remove();
-    if (restaurants === 'gagal') {
-      loadingContaiter.innerHTML = "<app-failed></app-failed>";
-    } else {
-      appExplore.restaurants = restaurants;
-    }
-    return restaurants;
   },
 
 };
 
-export default Home;
+export default Search;

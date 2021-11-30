@@ -8,6 +8,7 @@ const CacheHelper = {
   },
 
   async deleteOldCache() {
+    console.log('deletecache lama');
     const cacheNames = await caches.keys();
     cacheNames
       .filter((name) => name !== CONFIG.CACHE_NAME)
@@ -16,7 +17,6 @@ const CacheHelper = {
 
   async revalidateCache(request) {
     const response = await caches.match(request);
-
     if (response) {
       return response;
     }
@@ -29,7 +29,6 @@ const CacheHelper = {
 
   async _fetchRequest(request) {
     const response = await fetch(request);
-
     if (!response || response.status !== 200) {
       return response;
     }

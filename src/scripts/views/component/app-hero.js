@@ -11,7 +11,7 @@ class AppHero extends HTMLElement {
                                 Temukan tanpa ragu tempat kunyah-kunyah enak bersama orang tercinta,
                                 keluarga, dan teman-teman.
                             </p>
-                            <a href="#explorer" class="hero__button">Explore</a>
+                            <a href="/#explorer" class="hero__button">Explore</a>
                             </div>
                         </div>`;
   }
