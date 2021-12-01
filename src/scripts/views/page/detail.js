@@ -8,10 +8,9 @@ const Detail = {
             <app-reviews></app-reviews>  
             <div class="loadingContainer">
             <app-explore></app-explore></div>
-            <div class="likeButtonContainer"></div>
-            
-    `;
+            <div class="likeButtonContainer"></div>`;
   },
+
   async afterRender() {
     const loading = document.createElement("app-loading");
     const loadingContaiter = document.querySelector(".loadingContainer");

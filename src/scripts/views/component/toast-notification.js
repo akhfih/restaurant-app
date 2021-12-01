@@ -3,11 +3,6 @@
 import './app-failed';
 
 class ToastNotification extends HTMLElement {
-//   constructor() {
-//     super();
-//     this.message = this.getAttribute('message') || null;
-//   }
-
   set message(message) {
     this._message = message;
     this.render();
@@ -19,10 +14,8 @@ class ToastNotification extends HTMLElement {
   }
 
   getTemplate() {
-    return `
-            ${this.getStyle()}
-            <div id="toast"></div>
-            `;
+    return `${this.getStyle()}
+            <div id="toast"></div>`;
   }
 
   getStyle() {

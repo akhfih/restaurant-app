@@ -3,13 +3,10 @@ import RestaurantSource from "../../data/restaurant-source";
 
 const Home = {
   async render() {
-    return `       
-        <app-hero></app-hero>
-        <app-category/></app-category>
-        <div class="loadingContainer">
-        <app-explore></app-explore></div>
-        
-    `;
+    return `<app-hero></app-hero>
+            <app-category/></app-category>
+            <div class="loadingContainer">
+            <app-explore></app-explore></div>`;
   },
 
   async afterRender() {

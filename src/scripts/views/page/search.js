@@ -1,15 +1,12 @@
 /* eslint-disable quotes */
 import RestaurantSource from "../../data/restaurant-source";
 import UrlParser from "../../utils/url-parser";
-// import '../component/item-restaurant';
 
 const Search = {
   async render() {
-    return `       
-        <div class="loadingContainer">
-          <app-explore></app-explore>
-          </div>
-    `;
+    return `<div class="loadingContainer">
+            <app-explore></app-explore>
+            </div>`;
   },
 
   async afterRender() {
