@@ -1,6 +1,10 @@
 /* eslint-disable class-methods-use-this */
 class AppLoading extends HTMLElement {
   connectedCallback() {
+    window.scroll({
+      top: 0,
+      left: 0,
+    });
     this.render();
   }
 

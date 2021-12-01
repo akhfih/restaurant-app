@@ -1,6 +1,5 @@
 /* eslint-disable quotes */
 import RestaurantSource from "../../data/restaurant-source";
-// import '../component/item-restaurant';
 
 const Home = {
   async render() {
@@ -24,7 +23,6 @@ const Home = {
     loadingContaiter.appendChild(loading);
 
     const restaurants = await RestaurantSource.listRestaurants();
-    console.log(restaurants);
     loading.remove();
     if (restaurants === 'gagal') {
       loadingContaiter.innerHTML = "<app-failed></app-failed>";

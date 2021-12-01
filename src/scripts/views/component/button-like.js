@@ -34,6 +34,7 @@ class ButtonLike extends HTMLElement {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
       this._renderButton();
+      this._toastNotification('Berhasil ditambahkan ke favorite');
     });
   }
 
@@ -43,19 +44,25 @@ class ButtonLike extends HTMLElement {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
       this._renderButton();
+      this._toastNotification('Berhasil hapus dari favorite');
     });
   }
 
   _createLikeButtonTemplate() {
-    return `<button aria-label="like this movie" id="likeButton" class="like">
-               +</i>
+    return `<button aria-label="tambah restaruant favorite" id="likeButton" class="like">
+               +
             </button>`;
   }
 
   _createLikedButtonTemplate() {
-    return `<button aria-label="unlike this movie" id="likeButton" class="like">
-           -
+    return `<button aria-label="hapus restaurant dari favorite"  id="likeButton" class="like">
+              -
             </button>`;
+  }
+
+  _toastNotification(message) {
+    const toast = document.querySelector('toast-notification');
+    toast.message = message;
   }
 }
 

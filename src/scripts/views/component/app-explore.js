@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-underscore-dangle */
 import './app-header';
 
@@ -15,16 +16,17 @@ class AppExplore extends HTMLElement {
 
   set restaurants(restaurants) {
     this._restaurants = restaurants;
-    // console.log(restaurants);
     this.getItemRestaurant();
   }
 
-  // connectedCallback() {
-  //   this.render();
-  // }
+  connectedCallback() {
+    window.scroll({
+      top: 0,
+      left: 0,
+    });
+  }
 
   render() {
-    window.scrollTo(0, 0);
     this.innerHTML = this.getTemplate();
   }
 
@@ -32,8 +34,7 @@ class AppExplore extends HTMLElement {
     return `
       <section class="explorer" id="explorer">
           <app-header title="${this._header.title}" subTitle="${this._header.subTitle}" srcLogo="${this.srcLogoHeader}"></app-header>
-          <div class="restaurants"></div>
-         
+          <div class="restaurants"></div>         
       </section>
     `;
   }

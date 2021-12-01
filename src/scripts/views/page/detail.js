@@ -20,8 +20,6 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantSource.detailRestaurant(url.id);
 
-    // alert(restaurant);
-    console.log(restaurant);
     if (restaurant === 'gagal') {
       loadingContaiter.innerHTML = "<app-failed></app-failed>";
     } else {

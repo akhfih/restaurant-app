@@ -16,7 +16,7 @@ $warna-putih: #ffffff;
 
 body,
 html{
-  // max-width: 100%;
+  
   
   margin: 0;
   padding: 0;
@@ -28,12 +28,14 @@ html{
 
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -50px;
   left: 0;
-  background-color: #bf1722;
+  background-color: $warna-kedua;
   color: white;
   padding: 8px;
   z-index: 9999;
+  min-width: 44px;
+  min-height: 44px;
 
   &:focus {
     top: 0;
@@ -269,6 +271,7 @@ app-hero {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.11);
     border-radius: 10px;
     position: relative;
+    transition: all 0.3s linear;
 
     &__img {
       mask-image: linear-gradient(

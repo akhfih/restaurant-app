@@ -7,7 +7,8 @@ const Search = {
   async render() {
     return `       
         <div class="loadingContainer">
-        <app-explore></app-explore></div>
+          <app-explore></app-explore>
+          </div>
     `;
   },
 
@@ -16,13 +17,19 @@ const Search = {
     const loadingContaiter = document.querySelector(".loadingContainer");
     const appExplore = document.querySelector('app-explore');
     loadingContaiter.appendChild(loading);
+
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurants = await RestaurantSource.searchRestaurant(url.id);
     appExplore.header = {
       title: "Search Restaurants",
       subTitle: `Restaurant menyediakan ${url.id}`,
     };
-    appExplore.restaurants = restaurants.restaurants;
+
+    if (restaurants === 'gagal') {
+      loadingContaiter.innerHTML = "<app-failed></app-failed>";
+    } else {
+      appExplore.restaurants = restaurants.restaurants;
+    }
     loading.remove();
   },
 

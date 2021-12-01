@@ -21,8 +21,12 @@ export default class RestaurantSource {
   }
 
   static async searchRestaurant(query) {
-    const response = await fetch(API_ENDPOINT.SEARCH(query));
-    return response.json();
+    try {
+      const response = await fetch(API_ENDPOINT.SEARCH(query));
+      return response.json();
+    } catch {
+      return 'gagal';
+    }
   }
 
   static async reviewRestaurant(review) {

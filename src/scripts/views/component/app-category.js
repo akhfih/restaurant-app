@@ -6,19 +6,11 @@ class AppCategory extends HTMLElement {
     this.titleHeader = 'Menu';
     this.subTitleHeader = 'Berbagai pilihan menu';
     this.srcLogoHeader = './logo/logo-red-small.svg';
-    // this.registerOtherComponents();
   }
 
   connectedCallback() {
     this.render();
   }
-
-  // eslint-disable-next-line class-methods-use-this
-  // registerOtherComponents() {
-  //   if (typeof customElements.get('custom-header') === 'undefined') {
-  //     customElements.define('app-header', AppHeader);
-  //   }
-  // }
 
   render() {
     this.innerHTML = `<section class="menu">
@@ -31,119 +23,119 @@ class AppCategory extends HTMLElement {
               src="images/menu/burger.png"
               alt="burger"
             />
-            <a class="menu__list__item__link" href="#/search/air">Burger</a>
+            <a class="menu__list__item__link" href="#/search/roti">Roti</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/sandwich.png"
-              alt="sandwich"
+              alt="salad"
             />
-            <a class="menu__list__item__link" href="#">Sandwich</a>
+            <a class="menu__list__item__link" href="#/search/salad">Salad</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/nasi.png"
-              alt="nasi"
+              alt="matzo"
             />
-            <a class="menu__list__item__link" href="#">Nasi</a>
+            <a class="menu__list__item__link" href="#/search/matzo">Matzo</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/mie.png"
-              alt="mie"
+              alt="sup"
             />
-            <a class="menu__list__item__link" href="#">Mie</a>
+            <a class="menu__list__item__link" href="#/search/sup">Sup</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/sea-food.png"
-              alt="seafood"
+              alt="ikan"
             />
-            <a class="menu__list__item__link" href="#">Sea Food</a>
+            <a class="menu__list__item__link" href="#/search/ikan">Ikan</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/pizza.png"
-              alt="pizza"
+              alt="napolitana"
             />
-            <a class="menu__list__item__link" href="#">Pizza</a>
+            <a class="menu__list__item__link" href="#/search/napolitana">Napolitana</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/potato.png"
-              alt="potato"
+              alt="paket"
             />
-            <a class="menu__list__item__link" href="#">Potato</a>
+            <a class="menu__list__item__link" href="#/search/paket"">Paket</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/meat.png"
-              alt="meat"
+              alt="daging"
             />
-            <a class="menu__list__item__link" href="#">Meat</a>
+            <a class="menu__list__item__link" href="#/search/daging">Daging</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/tea.png"
-              alt="tea"
+              alt="teh"
             />
-            <a class="menu__list__item__link" href="#">Tea</a>
+            <a class="menu__list__item__link" href="#/search/teh">Teh</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/coffee.png"
-              alt="coffee"
+              alt="kopi"
             />
-            <a class="menu__list__item__link" href="#">Coffee</a>
+            <a class="menu__list__item__link" href="#/search/kopi">Kopi</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/juice.png"
-              alt="juice"
+              alt="jus"
             />
-            <a class="menu__list__item__link" href="#">Juice</a>
+            <a class="menu__list__item__link" href="#/search/jus"">Jus</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/orange.png"
-              alt="orange"
+              alt="sirup"
             />
-            <a class="menu__list__item__link" href="#">Orange</a>
+            <a class="menu__list__item__link" href="#/search/sirup">Sirup</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/ice.png"
-              alt="ice"
+              alt="es"
             />
-            <a class="menu__list__item__link" href="#">Ice</a>
+            <a class="menu__list__item__link" href="#/search/es">Es</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/milk.png"
-              alt="milk"
+              alt="coklat"
             />
-            <a class="menu__list__item__link" href="#">Milk</a>
+            <a class="menu__list__item__link" href="#/search/coklat">Coklat</a>
           </div>
           <div class="menu__list__item">
             <img
               class="menu__list__item__img"
               src="images/menu/akua.png"
-              alt="akua"
+              alt="air"
             />
-            <a class="menu__list__item__link" href="#">Akua</a>
+            <a class="menu__list__item__link" href="#/search/air">Ari</a>
           </div>
           <div class="menu__list__item">
             <img
@@ -151,7 +143,7 @@ class AppCategory extends HTMLElement {
               src="images/menu/soda.png"
               alt="soda"
             />
-            <a class="menu__list__item__link" href="#">Soda</a>
+            <a class="menu__list__item__link" href="#/search/soda">Soda</a>
           </div>
         </div>
       </section>`;

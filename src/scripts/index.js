@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import 'regenerator-runtime'; /* for async await transpile */
 import './views/component/app-navbar';
+import './views/component/button-skip';
+import './views/component/app-footer';
 import './views/component/app-hero';
 import './views/component/app-category';
 import './views/component/item-restaurant';
@@ -10,11 +12,10 @@ import './views/component/app-reviews';
 import './views/component/button-like';
 import './views/component/app-loading';
 import './views/component/app-failed';
-
+import './views/component/toast-notification';
 import '../styles/main.scss';
 import App from './views/app';
 import swRegister from './utils/sw-register';
-// import data from '../DATA.json';
 
 const app = new App({
   button: document.querySelector('.toggle'),

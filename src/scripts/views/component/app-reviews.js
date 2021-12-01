@@ -1,7 +1,7 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-underscore-dangle */
 import './app-header';
 import RestaurantSource from '../../data/restaurant-source';
-// import CONFIG from '../../globals/config';
 
 class AppReviews extends HTMLElement {
   constructor() {
@@ -17,15 +17,9 @@ class AppReviews extends HTMLElement {
 
   set reviews(reviews) {
     this._reviews = reviews.reverse();
-    // console.log(this._reviews);
     this.render();
     this.handleReview();
   }
-
-  // connectedCallback() {
-  //   // this.render();
-
-  // }
 
   render() {
     this.innerHTML = this.getTemplate();
@@ -44,11 +38,13 @@ class AppReviews extends HTMLElement {
       };
       const review = await RestaurantSource.reviewRestaurant(data);
       if (review === 'gagal') {
-        alert('gagal memberikan review...');
+        this.toastNotification('gagal menambahkan review');
+      } else if (review.error) {
+        this.toastNotification(`Review ${review.message}`);
       } else {
+        this.toastNotification('berhasil menambahkan review');
         this._reviews = review.customerReviews.reverse();
         this.render();
-        console.log(review);
       }
     });
   }
@@ -74,10 +70,15 @@ class AppReviews extends HTMLElement {
 
   itemReview() {
     return (this._reviews.map((review) => `<div class="item-review">
-    <h3 class="sub-title" >${review.name}</h3>
-    <p>${review.date}</p>    
-    <p>"${review.review}"</p>    
-    </div>`).join(''));
+            <h3 class="sub-title" >${review.name}</h3>
+            <p>${review.date}</p>    
+            <p>"${review.review}"</p>    
+            </div>`).join(''));
+  }
+
+  toastNotification(message) {
+    const toast = document.querySelector('toast-notification');
+    toast.message = message;
   }
 }
 

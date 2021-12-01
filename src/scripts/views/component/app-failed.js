@@ -10,10 +10,19 @@ class AppFailed extends HTMLElement {
 
   getTemplate() {
     return `
-       <div><p>Gagal Mendapatkan Data !!!</p></div>
+      
+       <div class = "failed"><img class="img-warning" src="./logo/warning.svg"> <p>Gagal Mendapatkan Data !!!</p></div>
        <style>
-          p {
-            font-size : 25px;
+          .failed {
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top : 24px;
+            
+          }
+          .img-warning {
+            width : 100px;   
+            margin-bottom : 20px;
           }
        </style>
         `;
