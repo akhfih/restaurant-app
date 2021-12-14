@@ -4,18 +4,22 @@
 import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
 
 class ButtonLike extends HTMLElement {
+  set init(init) {
+    this._container = init.likeButtonContainer;
+    this._restaurant = init.restaurant;
+    this._renderButton();
+  }
+
   set restaurant(restaurant) {
     this._restaurant = restaurant;
   }
 
   set container(container) {
     this._container = container;
-    this._renderButton();
   }
 
   async _renderButton() {
     const { id } = this._restaurant;
-
     if (await this._isRestaurantExist(id)) {
       this._renderLiked();
     } else {
@@ -36,6 +40,7 @@ class ButtonLike extends HTMLElement {
       this._renderButton();
       this._toastNotification('Berhasil ditambahkan ke favorite');
     });
+    document.getElementById('likeButtonContainer').dispatchEvent(new Event('likeButton:updated'));
   }
 
   _renderLiked() {
@@ -49,13 +54,13 @@ class ButtonLike extends HTMLElement {
   }
 
   _createLikeButtonTemplate() {
-    return `<button aria-label="tambah restaruant favorite" id="likeButton" class="like">
+    return `<button aria-label="tambah restaurant favorite" id="likeButton" class="like">
                +
             </button>`;
   }
 
   _createLikedButtonTemplate() {
-    return `<button aria-label="hapus restaurant dari favorite"  id="likeButton" class="like">
+    return `<button aria-label="hapus restaurant favorite"  id="likeButton" class="like">
               -
             </button>`;
   }

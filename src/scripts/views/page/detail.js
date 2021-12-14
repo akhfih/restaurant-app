@@ -32,8 +32,12 @@ const Detail = {
 
       const likeButtonContainer = document.querySelector('.likeButtonContainer');
       const buttonLike = document.createElement("button-like");
-      buttonLike.restaurant = restaurant.restaurant;
-      buttonLike.container = likeButtonContainer;
+      buttonLike.init = {
+        likeButtonContainer,
+        restaurant: restaurant.restaurant,
+      };
+      // buttonLike.restaurant = restaurant.restaurant;
+      // buttonLike.container = likeButtonContainer;
     }
   },
 };
