@@ -51,6 +51,7 @@ class ButtonLike extends HTMLElement {
       this._renderButton();
       this._toastNotification('Berhasil hapus dari favorite');
     });
+    document.getElementById('likeButtonContainer').dispatchEvent(new Event('likedButton:updated'));
   }
 
   _createLikeButtonTemplate() {
