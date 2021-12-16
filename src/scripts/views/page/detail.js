@@ -36,8 +36,6 @@ const Detail = {
         likeButtonContainer,
         restaurant: restaurant.restaurant,
       };
-      // buttonLike.restaurant = restaurant.restaurant;
-      // buttonLike.container = likeButtonContainer;
     }
   },
 };

@@ -16,7 +16,11 @@ class AppExplore extends HTMLElement {
 
   set restaurants(restaurants) {
     this._restaurants = restaurants;
-    this.getItemRestaurant();
+    if (this._restaurants.length === 0) {
+      this.noItemRestaurant();
+    } else {
+      this.getItemRestaurant();
+    }
   }
 
   connectedCallback() {
@@ -45,6 +49,11 @@ class AppExplore extends HTMLElement {
       ItemRestaurant.restaurant = restaurant;
       document.querySelector('.restaurants').appendChild(ItemRestaurant);
     });
+  }
+
+  noItemRestaurant() {
+    const loadingContaiter = document.querySelector('.restaurants');
+    loadingContaiter.innerHTML = '<div></div><div class="restaurant__item__not__found">Tidak ada item Restaurant</div>';
   }
 }
 

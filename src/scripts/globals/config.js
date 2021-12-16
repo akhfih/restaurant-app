@@ -4,7 +4,7 @@ const CONFIG = {
   CACHE_NAME: new Date().toISOString(),
   DATABASE_NAME: 'maaeem-database',
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: new Date().toISOString(),
+  OBJECT_STORE_NAME: 'maaeem',
 };
 
 export default CONFIG;

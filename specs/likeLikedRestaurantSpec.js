@@ -71,22 +71,6 @@ describe('Liking Unliking A Restaurant', () => {
       done();
     });
   });
-  // it('should not add a restaurant when it has no id', (done) => {
-  //   const buttonLike = document.createElement('button-like');
-  //   buttonLike.init = {
-  //     likeButtonContainer: document.querySelector('#likeButtonContainer'),
-  //     restaurant: {},
-  //   };
-  //   document.getElementById('likeButtonContainer').addEventListener('likeButton:updated', async () => {
-  //     await FavoriteRestaurantIdb.getAllRestaurant();
-  //     // document.querySelector('[aria-label="tambah restaurant favorite"]').dispatchEvent(new Event('click'));
-  //     // document.querySelector('#likeButton').dispatchEvent(new Event('click'));
-  //     expect(await FavoriteRestaurantIdb.getAllRestaurant()).toEqual([]);
-  //     console.log(document.querySelector('tes'));
-  //     done();
-  //   });
-  // });
-
   it('should display unlike widget when the restaurant has been liked', (done) => {
     putRestaurant({ id: 1 });
     const buttonLike = document.createElement('button-like');
