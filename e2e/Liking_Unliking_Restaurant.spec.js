@@ -50,5 +50,4 @@ Scenario('Unliking one restaurant', async ({ I }) => {
   I.click('#likeButton');
   I.amOnPage('/#/favorite');
   I.see('Tidak ada item Restaurant', '.restaurant__item__not__found');
-  pause();
 });

@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 import 'regenerator-runtime'; /* for async await transpile */
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import './views/component/app-navbar';
 import './views/component/button-skip';
 import './views/component/app-footer';

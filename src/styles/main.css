@@ -205,8 +205,8 @@ app-hero {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(15.1%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.81))), url("./images/heros/hero-image_2.jpg");
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 15.1%, rgba(0, 0, 0, 0.81) 100%), url("./images/heros/hero-image_2.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(15.1%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.81))), url("./images/heros/hero-image_2-small.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 15.1%, rgba(0, 0, 0, 0.81) 100%), url("./images/heros/hero-image_2-small.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -605,6 +605,10 @@ footer {
     margin: 0 70px;
     margin-top: 64px;
   }
+  .hero {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(15.1%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.81))), url("./images/heros/hero-image_2-large.jpg");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 15.1%, rgba(0, 0, 0, 0.81) 100%), url("./images/heros/hero-image_2-large.jpg");
+  }
   main section {
     margin-top: 32px;
   }
@@ -659,6 +663,8 @@ footer {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
+
+  
 }
 
 @media screen and (min-width: 1024px) {

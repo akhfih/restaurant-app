@@ -7,7 +7,8 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -39,8 +40,10 @@
     "puppeteer": "^13.0.0",
     "sass": "^1.43.4",
     "sass-loader": "^10.1.1",
+    "sharp": "^0.29.3",
     "style-loader": "^1.2.1",
     "webpack": "^4.46.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
@@ -48,6 +51,7 @@
   },
   "dependencies": {
     "idb": "^7.0.0",
+    "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.5",
     "serviceworker-webpack-plugin": "^1.0.1"
   }
